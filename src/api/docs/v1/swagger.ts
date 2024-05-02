@@ -17,7 +17,7 @@ const generateSwaggerSpec = (baseURL: string, options: SwaggerDocsOptions) => {
             },
             servers: [{ url: baseURL }]
         },
-        apis: ['./src/src/docs/v1/email.yaml']
+        apis: ['./src/api/docs/v1/email.yaml']
     });
 };
 
@@ -25,10 +25,10 @@ const swaggerDocs = (app: any, port: any, baseURL: string, options: SwaggerDocsO
     const swaggerSpec = generateSwaggerSpec(baseURL, options);
 
     // Route handler for serving Swagger UI
-    app.use('/src/docs/v1', swaggerUI.serve, swaggerUI.setup(swaggerSpec));
+    app.use('/api/v1/docs', swaggerUI.serve, swaggerUI.setup(swaggerSpec));
 
     // Route handler for serving Swagger JSON
-    app.get('/src/docs/v1/docs.json', (req: Request, res: Response) => {
+    app.get('/api/v1/docs/docs.json', (req: Request, res: Response) => {
         res.setHeader('Content-Type', 'application/json');
         res.send(swaggerSpec);
     });
