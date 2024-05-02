@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mail API</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+    }
+    
+    .container {
+        max-width: 800px;
+        margin: 100px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+    
+    h1 {
+        color: #333;
+    }
+    
+    p {
+        color: #666;
+        margin-top: 20px;
+    }
+
+    .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+        background-color: #0056b3;
+    }
+</style>
+<body>
+    <div class="container">
+        <h1>Welcome to the Mail API</h1>
+        <p>This is a simple API for managing emails.</p>
+        <a href="#" id="api-docs-link" class="button">Go to API Documentation</a>
+    </div>
+
+    <script>
+        const baseURL = window.location.protocol + '//' + window.location.hostname + ':' + window.location.port;
+        const apiDocsLink = document.getElementById('api-docs-link');
+        apiDocsLink.href = baseURL + '/api/docs/v1';
+    </script>
+</body>
+</html>
