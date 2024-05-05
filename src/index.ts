@@ -1,4 +1,4 @@
-import express, { Application, Request, Response, NextFunction } from 'express';
+import express, { Application } from 'express';
 import dotenv from 'dotenv';
 import helmet from 'helmet';
 import cors from 'cors';
@@ -13,6 +13,7 @@ import swaggerDocs from './api/docs/v1/swagger';
 // Load environment variables from .env file
 dotenv.config();
 
+// Connect database
 connectDB();
 
 // Create Express app
@@ -23,12 +24,11 @@ app.use(express.static('public'));
 app.use(cors({
     credentials: true,
 }));
-
-app.use(bodyParser.json()); // Parse JSON request bodies
+app.use(bodyParser.json()); 
 app.use(compression());
 app.use(cookieParser());
-app.use(helmet()); // Secure HTTP headers
-app.use(morgan('dev')); // HTTP request logger
+app.use(helmet());
+app.use(morgan('dev'));
 
 // routes handler
 app.use('/api/v1', router);
