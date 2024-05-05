@@ -37,13 +37,6 @@ You can access the API documentation using Swagger UI at [http://localhost:3000/
 - **PUT /emails/{emailId}:** Update an email by ID
 - **DELETE /emails/{emailId}:** Delete an email by ID
 
-## Dependencies
-
-- **express:** Fast, unopinionated, minimalist web framework for Node.js
-- **swagger-ui-express:** Swagger UI middleware for Express
-- **YAML:** YAML parser and serializer for Node.js
-- **nodemon:** Monitor for any changes in your Node.js application and automatically restart the server
-
 ## Contributing
 
 Contributions are welcome! Please follow the [Contribution Guidelines](CONTRIBUTING.md).
